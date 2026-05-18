@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+    login.fxml
+    Posizione: src/main/resources/com/libri/fxml/login.fxml
+    Controller: com.libri.controller.LoginController
+    Dimensioni finestra consigliate: 860 x 560
+-->
+
+<HBox
+    xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="it.unical.kindled.controller.loginController"
+    prefWidth="860"
+    prefHeight="560"
+    styleClass="scene-root">
+
+    <!-- ── Colonna sinistra: pannello decorativo ───────────── -->
+    <VBox
+        prefWidth="340"
+        minWidth="340"
+        maxWidth="340"
+        alignment="CENTER"
+        spacing="12"
+        styleClass="scene-root2">
+
+        <padding>
+            <Insets top="48" right="32" bottom="48" left="32" />
+        </padding>
+
+        <!-- Emoji libro -->
+        <Label
+            text="📚"
+            style="-fx-font-size: 48px;" />
+
+        <!-- Nome app -->
+        <Label
+            text="Libri"
+            style="-fx-font-size: 34px;
+                   -fx-font-family: 'Georgia';
+                   -fx-text-fill: #FAF8F4;" />
+
+        <!-- Tagline -->
+        <Label
+            text="La tua libreria personale"
+            style="-fx-font-size: 13px;
+                   -fx-font-family: 'Georgia';
+                   -fx-text-fill: rgba(250,248,244,0.6);" />
+
+        <!-- Spazio elastico -->
+        <Region VBox.vgrow="ALWAYS" />
+
+        <!-- Citazione in fondo -->
+        <Label
+            text="«Un lettore vive mille vite&#10;prima di morire.»"
+            textAlignment="CENTER"
+            wrapText="true"
+            style="-fx-font-size: 12px;
+                   -fx-font-family: 'Georgia';
+                   -fx-font-style: italic;
+                   -fx-text-fill: rgba(250,248,244,0.4);
+                   -fx-text-alignment: center;" />
+
+    </VBox>
+
+    <!-- ── Colonna destra: form login ─────────────────────── -->
+    <VBox
+        HBox.hgrow="ALWAYS"
+        alignment="CENTER"
+        styleClass="scene-root">
+
+        <!-- Form centrato, larghezza fissa -->
+        <VBox
+            maxWidth="320"
+            minWidth="280"
+            spacing="6"
+            alignment="TOP_LEFT">
+
+            <!-- Titolo -->
+            <Label
+                text="Bentornato"
+                styleClass="label-title" />
+
+            <!-- Sottotitolo -->
+            <Label
+                text="Accedi per continuare a leggere"
+                styleClass="label-subtitle"
+                style="-fx-padding: 0 0 16px 0;" />
+
+            <!-- Label USERNAME -->
+            <Label text="USERNAME" styleClass="label-field" />
+
+            <!-- Campo username -->
+            <TextField
+                fx:id="usernameField"
+                promptText="Il tuo username"
+                styleClass="text-field"
+                maxWidth="Infinity" />
+
+            <Region prefHeight="6" />
+
+            <!-- Label PASSWORD -->
+            <Label text="PASSWORD" styleClass="label-field" />
+
+            <!-- Campo password -->
+            <PasswordField
+                fx:id="passwordField"
+                promptText="La tua password"
+                styleClass="password-field"
+                maxWidth="Infinity" />
+
+            <!-- Riga ricordami + password dimenticata -->
+            <HBox
+                alignment="CENTER_LEFT"
+                spacing="0"
+                style="-fx-padding: 8px 0 4px 0;">
+                <CheckBox
+                    fx:id="rememberMeCheck"
+                    text="Ricordami"
+                    styleClass="check-box" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button
+                    text="Password dimenticata?"
+                    styleClass="button-link"
+                    onAction="#onForgotPassword" />
+            </HBox>
+
+            <!-- Etichetta errore (nascosta di default) -->
+            <Label
+                fx:id="errorLabel"
+                text=""
+                styleClass="label-error"
+                wrapText="true"
+                maxWidth="Infinity"
+                visible="false"
+                managed="false"
+                style="-fx-padding: 6px 10px;
+                       -fx-background-color: #FDECEA;
+                       -fx-background-radius: 6px;" />
+
+            <Region prefHeight="4" />
+
+            <!-- Bottone login -->
+            <Button
+                fx:id="loginButton"
+                text="Accedi"
+                styleClass="button-primary"
+                maxWidth="Infinity"
+                defaultButton="true"
+                onAction="#onLogin" />
+
+            <Region prefHeight="8" />
+
+            <!-- Separatore con "oppure" -->
+            <HBox alignment="CENTER" spacing="8">
+                <Region
+                    HBox.hgrow="ALWAYS"
+                    maxHeight="1"
+                    style="-fx-background-color: #E2DDD5;
+                           -fx-min-height: 1;
+                           -fx-max-height: 1;" />
+                <Label
+                    text="oppure"
+                    styleClass="label-secondary" />
+                <Region
+                    HBox.hgrow="ALWAYS"
+                    maxHeight="1"
+                    style="-fx-background-color: #E2DDD5;
+                           -fx-min-height: 1;
+                           -fx-max-height: 1;" />
+            </HBox>
+
+            <Region prefHeight="8" />
+
+            <!-- Link registrazione -->
+            <HBox alignment="CENTER" spacing="4">
+                <Label
+                    text="Non hai un account?"
+                    styleClass="label-secondary" />
+                <Button
+                    text="Registrati"
+                    styleClass="button-link"
+                    onAction="#onGoToRegister" />
+            </HBox>
+
+        </VBox>
+
+    </VBox>
+
+</HBox>

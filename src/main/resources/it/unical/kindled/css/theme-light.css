@@ -1,0 +1,261 @@
+/* ============================================================
+   theme-light.css — Tema Chiaro
+   Palette: avorio caldo + inchiostro scuro + accento ambra
+   ============================================================ */
+
+/* ── Variabili globali ─────────────────────────────────────── */
+.root {
+    /* Sfondi */
+    -fx-bg-primary:      #FFFFFF;   /* avorio caldo, sfondo principale */
+    -fx-bg-secondary:    #FFFFFF;   /* avorio scuro, pannelli/card */
+    -fx-bg-elevated:     #FFFFFF;   /* bianco puro, campi input e card elevate */
+
+    /* Testo */
+    -fx-text-primary:    #1C1A17;   /* inchiostro quasi-nero */
+    -fx-text-secondary:  #6B6760;   /* grigio caldo, label secondarie */
+    -fx-text-tertiary:   #A09C96;   /* grigio chiaro, placeholder */
+    -fx-text-on-accent:  #FFFFFF;
+
+    /* Accento */
+    -fx-accent:          #A8FF44;   /* ambra bruciata */
+    -fx-accent-hover:    #79BA2F;
+    -fx-accent-light:    #BA2F2F;   /* sfondo badge/highlight */
+
+    /* Bordi */
+    -fx-border-subtle:   #E2DDD5;
+    -fx-border-default:  #C8C2B8;
+    -fx-border-focus:    #B8620A;
+
+    /* Stato errore */
+    -fx-danger:          #C0392B;
+    -fx-danger-light:    #FDECEA;
+
+    /* Stato successo */
+    -fx-success:         #2E7D32;
+    -fx-success-light:   #E8F5E9;
+
+    /* Tipografia */
+    -fx-font-family:     "Georgia";
+    -fx-font-size:       14px;
+}
+
+/* ── Schermata / scene ─────────────────────────────────────── */
+.scene-root2 {
+    -fx-background-color: #3A4B66;
+}
+.scene-root {
+    -fx-background-color: #7998C9;
+}
+
+/* ── Label ─────────────────────────────────────────────────── */
+.label {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-family: "Georgia";
+}
+
+.label-secondary {
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-size: 12px;
+}
+
+.label-title {
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-size: 26px;
+    -fx-font-family: "Georgia";
+}
+
+.label-subtitle {
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-size: 13px;
+}
+
+.label-error {
+    -fx-text-fill: -fx-danger;
+    -fx-font-size: 12px;
+}
+
+.label-field {
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-size: 11px;
+    -fx-font-family: "Georgia";
+}
+
+/* ── TextField / PasswordField ─────────────────────────────── */
+.text-field,
+.password-field {
+    -fx-background-color: -fx-bg-elevated;
+    -fx-border-color: -fx-border-default;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-text-fill: -fx-text-primary;
+    -fx-prompt-text-fill: -fx-text-tertiary;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 14px;
+    -fx-padding: 10px 14px;
+    -fx-pref-height: 42px;
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: -fx-border-focus;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(184,98,10,0.15), 6, 0, 0, 0);
+}
+
+.text-field:hover,
+.password-field:hover {
+    -fx-border-color: -fx-border-default;
+}
+
+/* ── Bottone primario ──────────────────────────────────────── */
+.button-primary {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: -fx-text-on-accent;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 14px;
+    -fx-padding: 11px 24px;
+    -fx-background-radius: 6px;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-pref-height: 44px;
+}
+
+.button-primary:hover {
+    -fx-background-color: -fx-accent-hover;
+    -fx-effect: dropshadow(gaussian, rgba(184,98,10,0.25), 8, 0, 0, 2);
+}
+
+.button-primary:pressed {
+    -fx-background-color: derive(-fx-accent-hover, -10%);
+    -fx-effect: none;
+    -fx-translate-y: 1px;
+}
+
+/* ── Bottone secondario / testo ────────────────────────────── */
+.button-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-accent;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 13px;
+    -fx-border-width: 0;
+    -fx-padding: 4px 0;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
+.button-link:hover {
+    -fx-text-fill: -fx-accent-hover;
+}
+
+/* ── CheckBox ──────────────────────────────────────────────── */
+.check-box {
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-size: 13px;
+    -fx-font-family: "Georgia";
+}
+
+.check-box .box {
+    -fx-background-color: -fx-bg-elevated;
+    -fx-border-color: -fx-border-default;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-min-width: 16px;
+    -fx-min-height: 16px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-accent;
+    -fx-border-color: -fx-accent;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+/* ── Separatore ────────────────────────────────────────────── */
+.separator .line {
+    -fx-border-color: -fx-border-subtle;
+    -fx-border-width: 1px;
+}
+
+/* ── Card / pannello ───────────────────────────────────────── */
+.card {
+    -fx-background-color: -fx-bg-elevated;
+    -fx-border-color: -fx-border-subtle;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 16, 0, 0, 4);
+}
+
+/* ── Sidebar / pannello laterale ───────────────────────────── */
+.sidebar {
+    -fx-background-color: -fx-bg-secondary;
+    -fx-border-color: -fx-border-subtle;
+    -fx-border-width: 0 1px 0 0;
+}
+
+/* ── Nav item ──────────────────────────────────────────────── */
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 13px;
+    -fx-padding: 9px 14px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-width: 0;
+}
+
+.nav-item:hover {
+    -fx-background-color: -fx-bg-primary;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.nav-item-active {
+    -fx-background-color: -fx-bg-primary;
+    -fx-text-fill: -fx-text-primary;
+    -fx-border-color: -fx-border-subtle;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 13px;
+    -fx-padding: 9px 14px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* ── ScrollPane ────────────────────────────────────────────── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: -fx-border-subtle;
+    -fx-background-radius: 4px;
+}
+
+/* ── Progress bar ──────────────────────────────────────────── */
+.progress-bar .bar {
+    -fx-background-color: -fx-accent;
+    -fx-background-radius: 4px;
+    -fx-border-width: 0;
+}
+
+.progress-bar .track {
+    -fx-background-color: -fx-border-subtle;
+    -fx-background-radius: 4px;
+    -fx-border-width: 0;
+}

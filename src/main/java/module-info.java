@@ -5,4 +5,6 @@ module it.unical.kindled {
 
     opens it.unical.kindled to javafx.fxml;
     exports it.unical.kindled;
+    exports it.unical.kindled.controller;
+    opens it.unical.kindled.controller to javafx.fxml;
 }
