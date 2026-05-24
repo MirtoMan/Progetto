@@ -1,6 +1,8 @@
 module it.unical.kindled {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
+    requires jbcrypt;
 
 
     opens it.unical.kindled to javafx.fxml;
