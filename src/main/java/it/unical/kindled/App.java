@@ -1,5 +1,8 @@
 package it.unical.kindled;
 
+import it.unical.kindled.database.DatabaseInitializer;
+import it.unical.kindled.database.DatabaseManager;
+import it.unical.kindled.view.SceneHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,11 +13,12 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 860, 560);
-        scene.getStylesheets().add(getClass().getResource("css/theme-light.css").toExternalForm());
+        SceneHandler.init(stage);
+
+        DatabaseInitializer.initialize();
+        DatabaseInitializer.createAdminIfNotExists();
+
+        SceneHandler.switchTo("/it/unical/kindled/login-view.fxml", 860, 560);
         stage.setTitle("Kindled!");
-        stage.setScene(scene);
-        stage.show();
     }
 }
